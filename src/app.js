@@ -1,20 +1,8 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
-
-let who = ["The dog", "My grandma", "The mailman", "My bird"];
-let action = ["ate", "peed", "crushed", "broke"];
-let what = ["my homework", "my phone", "the car"];
-let when = [
-  "before the class",
-  "when I was sleeping",
-  "while I was exercising",
-  "during my lunch",
-  "while I was praying"
-];
 
 window.onload = function() {
   loadExcuse();
@@ -22,19 +10,29 @@ window.onload = function() {
   clickExcuse();
 };
 
-function randomNumber(length) {
+function randomIndex(length) {
   let number = Math.floor(Math.random() * length);
   return number;
 }
 
 function getString(array) {
   let length = array.length;
-  let random = randomNumber(length);
+  let random = randomIndex(length);
   let string = array[random];
   return string;
 }
 
 function getExcuse() {
+  let who = ["The dog", "My grandma", "The mailman", "My bird"];
+  let action = ["ate", "peed", "crushed", "broke"];
+  let what = ["my homework", "my phone", "the car"];
+  let when = [
+    "before the class",
+    "when I was sleeping",
+    "while I was exercising",
+    "during my lunch",
+    "while I was praying"
+  ];
   let whoString = getString(who);
   let actionString = getString(action);
   let whatString = getString(what);
@@ -56,6 +54,7 @@ function liveExcuse() {
   let excuse = getExcuse();
   excuseLive.innerHTML = excuse;
 }
+
 function clickExcuse() {
   let excuseClick = document.querySelector("#excuse-onclick");
   excuseClick.addEventListener("mouseover", () => {
